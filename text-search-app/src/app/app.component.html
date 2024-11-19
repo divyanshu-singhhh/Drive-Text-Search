@@ -1,0 +1,50 @@
+<div class="container"> 
+
+  <div *ngIf="!isLoggedIn">
+    <mat-card>
+      <h2>{{ title }}</h2>
+      <button mat-raised-button color="primary" (click)="loginWithGoogle()">
+        Login with Google
+      </button>
+    </mat-card>
+  </div>
+
+  <div *ngIf="isLoggedIn" class="logged-in">
+    <mat-card>
+      <h2>Welcome, {{ userName }}</h2>
+      <div *ngIf="message">{{ message }}...</div>
+    </mat-card>
+
+    <mat-card>
+      <mat-form-field appearance="fill">
+        <mat-label>Search for text in files</mat-label>
+        <input matInput [(ngModel)]="query" placeholder="Enter search query" />
+      </mat-form-field>
+      <div class="bottom-buttons">
+        <button mat-raised-button color="primary" (click)="searchFiles()"[disabled]="message != ''" >
+          Search
+        </button>
+        <button mat-raised-button color="warn" (click)="logout()" [disabled]= "message != ''">Logout</button>
+      </div>
+    </mat-card>
+
+    <mat-card *ngIf="results.length">
+      <table mat-table [dataSource]="results">
+        <ng-container matColumnDef="file_name">
+          <th mat-header-cell *matHeaderCellDef>File Name</th>
+          <td mat-cell *matCellDef="let row">{{ row.filename }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="file_link">
+          <th mat-header-cell *matHeaderCellDef>File Link</th>
+          <td mat-cell *matCellDef="let row">
+            <a [href]="row.url" target="_blank">View File</a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card>
+  </div>
+</div>

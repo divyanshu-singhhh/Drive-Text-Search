@@ -1,0 +1,22 @@
+{
+  "name": "google-drive-search",
+  "version": "1.0.0",
+  "description": "Search from text inside your google drive files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.16.0",
+    "body-parser": "^1.20.3",
+    "connect-redis": "^7.1.1",
+    "crypto": "^1.0.1",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "googleapis": "^144.0.0",
+    "redis": "^4.7.0"
+  }
+}

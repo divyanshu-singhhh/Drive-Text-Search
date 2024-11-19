@@ -1,0 +1,73 @@
+/* Center the content vertically and horizontally */
+.container {
+  display: flex;  /* Set the host to be a flex container */
+  justify-content: center;  /* Align items horizontally to the center */
+  align-items: center;  /* Align items vertically to the center */
+  height: 100vh;  /* Full viewport height */
+  flex-direction: column; 
+  background-color: #f0f0f0;  /* Stack children vertically */
+}
+
+.bottom-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.logged-in{
+  width: 70%;
+}
+
+h1 {
+  color: blue;
+  margin-bottom: 16px;  /* Space below the heading */
+}
+
+button {
+  margin-top: 16px;  /* Space above the button */
+}
+
+/* Style for your card or content container */
+mat-card {
+  padding: 20px;  /* Add some padding inside the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center content inside the card */
+}
+
+/* Align form controls and search bar in a flex column */
+mat-form-field {
+  width: 100%;  /* Make the form fields take full width */
+  margin-bottom: 16px;  /* Space between form fields */
+}
+
+.mat-input-element {
+  padding: 10px;
+}
+
+/* Style for the table displaying search results */
+table {
+  width: 100%;  /* Full width of the container */
+  margin-top: 20px;  /* Space above the table */
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;  /* Add a line to separate rows */
+}
+
+th {
+  background-color: #f4f4f4;  /* Light background for headers */
+}
+
+/* Make the search query input visually distinct */
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 20px;  /* Space below the input field */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
