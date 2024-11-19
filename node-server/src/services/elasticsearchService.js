@@ -6,6 +6,7 @@ const client = new Client({
   auth: {
       username: process.env.ELASTICSEARCH_USERNAME || '', 
       password: process.env.ELASTICSEARCH_PASSWORD || '', 
+      apiKey: process.env.ELASTICSEARCH_API_KEY || ''
   },
 });
 
