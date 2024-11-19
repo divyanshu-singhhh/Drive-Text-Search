@@ -8,9 +8,6 @@ const RedisStore = require("connect-redis").default;
 
 const startServer = async () => {
     try {
-        console.log(process.env.REDIS_HOST);
-        console.log(process.env.REDIS_PORT);
-        
         console.log('Connecting to Redis at', process.env.REDIS_HOST, process.env.REDIS_PORT);
         // Configure Redis client
         const redisClient = redis.createClient({
